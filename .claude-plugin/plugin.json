@@ -1,0 +1,16 @@
+{
+  "name": "ditto",
+  "displayName": "Ditto",
+  "version": "0.1.0",
+  "description": "Ditto's agent integration.",
+  "author": {
+    "name": "Ditto",
+    "url": "https://github.com/dittowords"
+  },
+  "homepage": "https://developer.dittowords.com",
+  "repository": "https://github.com/dittowords/ditto-agent-setup",
+  "license": "MIT",
+  "keywords": ["ditto", "copy", "content", "styleguide"],
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,4 @@
+# Scopes Ditto MCP tool calls to specific projects.
+# Replace with a real project developer id from your workspace.
+projects:
+  - id: "your-project-developer-id"

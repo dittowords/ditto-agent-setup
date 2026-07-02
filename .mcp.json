@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "ditto": {
+      "type": "http",
+      "url": "https://api.dittowords.com/v2/mcp",
+      "headers": {
+        "Authorization": "token ${DITTO_API_TOKEN}"
+      }
+    }
+  }
+}

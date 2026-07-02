@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/ditto-instructions.md\"",
+            "commandWindows": "Get-Content \"$env:CLAUDE_PLUGIN_ROOT\\hooks\\ditto-instructions.md\"",
+            "timeout": 5,
+            "statusMessage": "Loading Ditto instructions..."
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/ditto-instructions.md\"",
+            "commandWindows": "Get-Content \"$env:CLAUDE_PLUGIN_ROOT\\hooks\\ditto-instructions.md\"",
+            "timeout": 5,
+            "statusMessage": "Loading Ditto instructions..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Reminder: user-facing copy goes through Ditto (styleguide rules + text reuse via the ditto MCP tools).'",
+            "commandWindows": "Write-Output 'Reminder: user-facing copy goes through Ditto (styleguide rules + text reuse via the ditto MCP tools).'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
