@@ -3,14 +3,14 @@
 Ditto's agent integration for Claude Code, bundled as a single plugin so it
 works by default. One install wires up:
 
-- **Ditto MCP server** — styleguide rules and text search/reuse, no separate
-  MCP setup.
-- **Session hooks** — every session (including resumes, compactions, and
+- Ditto MCP server: styleguide rules and text search/reuse, no separate MCP
+  setup.
+- Session hooks: every session (including resumes, compactions, and
   subagents) starts with instructions to consult Ditto for user-facing copy,
   without you prompting it.
-- **`/ditto-review`** — check the current diff's user-facing strings against
-  your styleguide rules and existing Ditto text; returns a fix-list.
-- **`/ditto-audit [path]`** — the same check across a directory or the whole
+- `/ditto-review`: check the current diff's user-facing strings against your
+  styleguide rules and existing Ditto text; returns a fix-list.
+- `/ditto-audit [path]`: the same check across a directory or the whole
   codebase.
 
 ## Install
@@ -30,8 +30,8 @@ Code runs in:
 export DITTO_API_TOKEN=<your-api-token>
 ```
 
-Restart Claude Code (or run `/mcp`) and approve the `ditto` MCP server. Done —
-new sessions consult Ditto automatically when writing UI text.
+Restart Claude Code (or run `/mcp`) and approve the `ditto` MCP server. That's
+it: new sessions consult Ditto automatically when writing UI text.
 
 ## Project scoping
 
@@ -45,7 +45,7 @@ projects:
 
 If your repo uses [Ditto specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview)
 (`*.ditto.md` files), the skills treat them as the source of truth for the
-surfaces they cover — specs are an optional add-on, not a requirement.
+surfaces they cover. Specs are an optional add-on, not a requirement.
 
 ## Try it on the example
 
@@ -69,13 +69,13 @@ From this repo:
     (existing Ditto text: auth.signIn)
   example/src/ErrorBanner.jsx:L2: rule "Whoops!! Something went wrong…" → "Something went wrong. Try again later."
     (error tone: calm, no interjections)
-  example/src/ErrorBanner.jsx:L5: dupe "Session timed out — please log in again" → "Your session expired. Please sign in again."
+  example/src/ErrorBanner.jsx:L5: dupe "Session timed out, please log in again" → "Your session expired. Please sign in again."
     (two variants of the same message; L4 matches Ditto)
 
   2 files scanned, 9 strings checked, 6 findings.
 ```
 
-And `/ditto-review` does the same for just your working diff — useful right
+And `/ditto-review` does the same for just your working diff, useful right
 before a commit:
 
 ```
@@ -92,11 +92,11 @@ before a commit:
 
 ## What "on by default" means
 
-A `SessionStart` hook (matching `startup|resume|clear|compact`) injects
-Ditto instructions into context, a `SubagentStart` hook does the same for
+A `SessionStart` hook (matching `startup|resume|clear|compact`) injects Ditto
+instructions into context, a `SubagentStart` hook does the same for
 subagents, and a `UserPromptSubmit` hook adds a one-line reminder each turn.
 So the agent fetches your styleguide rules and searches for reusable text
-whenever it touches user-facing copy — no manual prompting, and no
+whenever it touches user-facing copy, with no manual prompting and no
 copy-pasted instructions that drift out of date.
 
 ## Layout
@@ -114,4 +114,5 @@ example/                     sample app to run the skills against
 
 ## Scope
 
-v1 is Claude Code only. Other hosts (Cursor, Codex, Windsurf, …) later.
+v1 is Claude Code only. Other hosts (Cursor, Codex, Windsurf, and so on)
+later.

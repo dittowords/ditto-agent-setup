@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "ditto",
-  "description": "Ditto's agent integration for Claude Code. On-brand, reusable UI copy by default.",
+  "description": "Ditto's agent integration for Claude Code.",
   "owner": {
     "name": "Ditto",
     "url": "https://github.com/dittowords"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "ditto",
-      "description": "Bundled Ditto MCP + session instructions + /ditto-review and /ditto-audit skills.",
+      "description": "Bundled Ditto MCP + session instructions + skills.",
       "source": "./",
       "category": "productivity"
     }
