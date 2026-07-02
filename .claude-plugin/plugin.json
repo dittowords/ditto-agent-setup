@@ -1,0 +1,16 @@
+{
+  "name": "ditto",
+  "displayName": "Ditto",
+  "version": "0.1.0",
+  "description": "Ditto's agent integration, on by default: bundled Ditto MCP, session instructions, and review/audit skills for user-facing copy.",
+  "author": {
+    "name": "Ditto",
+    "url": "https://github.com/dittowords"
+  },
+  "homepage": "https://developer.dittowords.com/mcp-reference/overview",
+  "repository": "https://github.com/dittowords/ditto-agent-setup",
+  "license": "MIT",
+  "keywords": ["ditto", "copy", "content", "styleguide", "ui-text"],
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
+}
