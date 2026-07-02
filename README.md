@@ -1,7 +1,10 @@
 # Ditto Agent Package
 
-Ditto's agent integration for Claude Code, bundled as a single plugin so it
-works by default. One install wires up:
+Ditto's agent integration, bundled so it works by default. The goal is to
+support all kinds of coding agents (Claude Code, Cursor, Codex, Windsurf, and
+so on). For now it ships Claude Code only; other hosts come later.
+
+Installed as a single Claude Code plugin, one install wires up:
 
 - Ditto MCP server: styleguide rules and text search/reuse, no separate MCP
   setup.
@@ -114,5 +117,6 @@ example/                     sample app to run the skills against
 
 ## Scope
 
-v1 is Claude Code only. Other hosts (Cursor, Codex, Windsurf, and so on)
-later.
+This package is intended to cover all kinds of coding agents. v1 is Claude
+Code only; support for other hosts (Cursor, Codex, Windsurf, and so on) is
+planned.
