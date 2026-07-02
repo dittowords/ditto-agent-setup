@@ -1,15 +1,9 @@
 # Ditto Agent Package
 
-Ditto's agent integration, bundled so it works by default. The goal is to
-support all kinds of coding agents (Claude Code, Cursor, Codex, Windsurf, and
-so on). For now it ships Claude Code only; other hosts come later.
+Ditto's bundled agent integration:
 
-Installed as a single Claude Code plugin, one install wires up:
-
-- Ditto MCP server: styleguide rules and text search/reuse, no separate MCP
-  setup.
-- Session hooks: every session (including resumes, compactions, and
-  subagents) starts with instructions to consult Ditto for user-facing copy,
+- [Ditto MCP server](https://developer.dittowords.com/mcp-reference/overview)
+- Session hooks: every session starts with instructions to consult Ditto for user-facing copy,
   without you prompting it.
 - `/ditto-review`: check the current diff's user-facing strings against your
   styleguide rules and existing Ditto text; returns a fix-list.
@@ -33,8 +27,7 @@ Code runs in:
 export DITTO_API_TOKEN=<your-api-token>
 ```
 
-Restart Claude Code (or run `/mcp`) and approve the `ditto` MCP server. That's
-it: new sessions consult Ditto automatically when writing UI text.
+Restart Claude Code (or run `/mcp`) and approve the `ditto` MCP server.
 
 ## Project scoping
 
@@ -46,9 +39,7 @@ projects:
   - id: "your-project-developer-id"
 ```
 
-If your repo uses [Ditto specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview)
-(`*.ditto.md` files), the skills treat them as the source of truth for the
-surfaces they cover. Specs are an optional add-on, not a requirement.
+More information can be found in the [Ditto MCP docs](https://developer.dittowords.com/mcp-reference/overview).
 
 ## Try it on the example
 
@@ -93,30 +84,3 @@ before a commit:
   2 strings checked, 1 finding.
 ```
 
-## What "on by default" means
-
-A `SessionStart` hook (matching `startup|resume|clear|compact`) injects Ditto
-instructions into context, a `SubagentStart` hook does the same for
-subagents, and a `UserPromptSubmit` hook adds a one-line reminder each turn.
-So the agent fetches your styleguide rules and searches for reusable text
-whenever it touches user-facing copy, with no manual prompting and no
-copy-pasted instructions that drift out of date.
-
-## Layout
-
-```
-.claude-plugin/plugin.json   plugin manifest
-.claude-plugin/marketplace.json
-.mcp.json                    bundled Ditto MCP server (HTTP + DITTO_API_TOKEN)
-hooks/hooks.json             SessionStart / SubagentStart / UserPromptSubmit
-hooks/ditto-instructions.md  the injected instructions
-skills/ditto-review/         diff review skill
-skills/ditto-audit/          directory/codebase audit skill
-example/                     sample app to run the skills against
-```
-
-## Scope
-
-This package is intended to cover all kinds of coding agents. v1 is Claude
-Code only; support for other hosts (Cursor, Codex, Windsurf, and so on) is
-planned.
