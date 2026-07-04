@@ -29,18 +29,6 @@ export DITTO_API_TOKEN=<your-api-token>
 
 Restart Claude Code (or run `/mcp`) and approve the `ditto` MCP server.
 
-## Project scoping
-
-Add a `ditto/config.yml` to your repo root to scope Ditto results to specific
-projects:
-
-```yaml
-projects:
-  - id: "your-project-developer-id"
-```
-
-More information can be found in the [Ditto MCP docs](https://developer.dittowords.com/mcp-reference/overview).
-
 ## Try it on the example
 
 The [`example/`](example) directory contains sample components seeded with
