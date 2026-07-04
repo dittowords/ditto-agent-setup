@@ -29,58 +29,16 @@ export DITTO_API_TOKEN=<your-api-token>
 
 Restart Claude Code (or run `/mcp`) and approve the `ditto` MCP server.
 
-## Project scoping
-
-Add a `ditto/config.yml` to your repo root to scope Ditto results to specific
-projects:
-
-```yaml
-projects:
-  - id: "your-project-developer-id"
-```
-
-More information can be found in the [Ditto MCP docs](https://developer.dittowords.com/mcp-reference/overview).
-
 ## Try it on the example
 
 The [`example/`](example) directory contains sample components seeded with
 copy problems (inconsistent casing, "Log in" vs "sign in", shouty errors).
 From this repo:
 
-```
-> /ditto-audit example
-
-⏺ Fetching styleguide rules from Ditto…
-⏺ Scanning example/ for user-facing strings…
-
-  example/src/SignupForm.jsx:L4: rule "Create Your Account!" → "Create your account"
-    (sentence case for headings; no exclamation points)
-  example/src/SignupForm.jsx:L5: rule "E-Mail Address" → "Email address"
-    (terminology: "email", never "e-mail")
-  example/src/SignupForm.jsx:L9: rule "SIGN UP NOW" → "Sign up"
-    (no all caps; buttons are verb-first, concise)
-  example/src/SignupForm.jsx:L11: reuse "Log In" → "Sign in"
-    (existing Ditto text: auth.signIn)
-  example/src/ErrorBanner.jsx:L2: rule "Whoops!! Something went wrong…" → "Something went wrong. Try again later."
-    (error tone: calm, no interjections)
-  example/src/ErrorBanner.jsx:L5: dupe "Session timed out, please log in again" → "Your session expired. Please sign in again."
-    (two variants of the same message; L4 matches Ditto)
-
-  2 files scanned, 9 strings checked, 6 findings.
-```
+![ditto-audit running on the example directory](assets/ditto-audit.png)
 
 And `/ditto-review` does the same for just your working diff, useful right
 before a commit:
 
-```
-> /ditto-review
-
-⏺ Collecting diff… 1 file changed.
-⏺ Checking 2 new strings against styleguide rules and Ditto text…
-
-  src/Settings.tsx:L48: reuse "Save Changes" → "Save changes"
-    (existing Ditto text: common.save; sentence case)
-
-  2 strings checked, 1 finding.
-```
+![ditto-review running on a working diff](assets/ditto-review.png)
 
