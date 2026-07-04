@@ -47,7 +47,7 @@ The [`example/`](example) directory contains sample components seeded with
 copy problems (inconsistent casing, "Log in" vs "sign in", shouty errors).
 From this repo:
 
-![ditto-audit running on the example directory](assets/ditto-audit.svg)
+![ditto-audit running on the example directory](assets/ditto-audit.png)
 
 And `/ditto-review` does the same for just your working diff, useful right
 before a commit:
