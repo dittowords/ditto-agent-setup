@@ -40,5 +40,5 @@ From this repo:
 And `/ditto-review` does the same for just your working diff, useful right
 before a commit:
 
-![ditto-review running on a working diff](assets/ditto-review.svg)
+![ditto-review running on a working diff](assets/ditto-review.png)
 
