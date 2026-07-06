@@ -24,16 +24,23 @@ fix-list, not an essay.
 
 3. **Fetch the rules** once with `get_styleguide_rules` (Ditto MCP). If the
    repo has `ditto/config.yml`, results are already scoped to its projects.
-   If the repo has `*.ditto.md` spec files covering a changed surface, load
-   the relevant ones and treat them as the source of truth for that surface.
 
-4. **Check each string**:
+4. **Detect specs.** Check for `workspace.ditto.md` at the repo root and any
+   `*.ditto.md` covering a changed surface (e.g. an `index.ditto.md` in or near
+   a changed component's directory). If any are present, the user is using
+   Ditto specs — follow the spec-driven procedure in `reference/spec-audit.md`
+   (relative to the plugin root), scoped to the changed surfaces, treating
+   specs as the source of truth for the surfaces they cover. Still run the
+   styleguide-rules + reuse checks below. If no spec files exist, skip the spec
+   procedure and run the checks below as the whole review.
+
+5. **Check each string**:
    - **Rules**: does it violate any styleguide rule? (capitalization, tone,
      terminology, punctuation, formatting — whatever the rules say.)
    - **Reuse**: call `search_ditto_text` for it; if an equivalent string
      exists in Ditto, the diff should use that string verbatim.
 
-5. **Report the fix-list.** One line per finding:
+6. **Report the fix-list.** One line per finding:
 
    `<file>:L<line>: <rule|reuse|spec> "<current string>" → "<suggested string>" (<why, ≤10 words>)`
 

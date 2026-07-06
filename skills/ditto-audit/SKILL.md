@@ -28,16 +28,23 @@ diff.
 
 3. **Fetch the rules** once with `get_styleguide_rules` (Ditto MCP). If the
    repo has `ditto/config.yml`, results are already scoped to its projects.
-   If the repo contains `*.ditto.md` spec files, load the ones covering the
-   audited surfaces and treat them as the source of truth there.
 
-4. **Check each string** for rule violations and for reuse: batch
+4. **Detect specs.** Within the audited scope, glob for `workspace.ditto.md`
+   (repo root), `**/index.ditto.md`, and any other `**/*.ditto.md`. If any are
+   present, the user is using Ditto specs — follow the spec-driven procedure in
+   `reference/spec-audit.md` (relative to the plugin root), scoped to the
+   audited path, treating specs as the source of truth for the surfaces they
+   cover. Still run the styleguide-rules + reuse steps below for workspace-wide
+   rules and un-specced strings. If no spec files exist, skip the spec
+   procedure and run the steps below as the whole audit.
+
+5. **Check each string** for rule violations and for reuse: batch
    `search_ditto_text` lookups where possible; if an equivalent string
    already exists in Ditto, the code should use it verbatim. Also flag
    near-duplicates *within* the codebase that Ditto could unify (e.g.
    "Log in" here, "Sign in" there).
 
-5. **Report the fix-list**, grouped by file, one line per finding:
+6. **Report the fix-list**, grouped by file, one line per finding:
 
    `<file>:L<line>: <rule|reuse|dupe|spec> "<current string>" → "<suggested string>" (<why, ≤10 words>)`
 
