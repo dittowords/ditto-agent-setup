@@ -11,6 +11,5 @@
   "repository": "https://github.com/dittowords/ditto-agent-setup",
   "license": "MIT",
   "keywords": ["ditto", "copy", "content", "styleguide"],
-  "hooks": "./hooks/hooks.json",
   "mcpServers": "./.claude-plugin/mcp.json"
 }
