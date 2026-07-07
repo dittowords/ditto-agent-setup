@@ -12,5 +12,5 @@
   "license": "MIT",
   "keywords": ["ditto", "copy", "content", "styleguide"],
   "hooks": "./hooks/hooks.json",
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.claude-plugin/mcp.json"
 }
