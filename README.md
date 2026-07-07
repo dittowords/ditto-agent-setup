@@ -7,7 +7,8 @@ Ditto's bundled agent integration:
   without you prompting it.
 - `/ditto-review`: check the current diff's user-facing strings against your
   styleguide rules and existing Ditto text; returns a fix-list.
-- `/ditto-audit [path]`: the same check across a directory or the whole
+- `/ditto-audit [path]`: check the path for user-facing strings against your
+  styleguide rules and existing Ditto text; returns a fix-list
   codebase.
 
 ## Install
