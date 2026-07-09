@@ -9,13 +9,13 @@ Ditto's bundled agent integration:
   styleguide rules and existing Ditto text; returns a fix-list.
 - `/ditto-audit [path]`: check the path for user-facing strings against your
   styleguide rules and existing Ditto text; returns a fix-list.
-- `/ditto-spec-audit [component]`: for repos using Ditto specs, audit every
+- `/ditto-spec-audit [component]`: (for repos using Ditto specs) audit every
   instance of a specced component across the codebase against its spec's
-  rules. Component-scoped, unlike the file-scoped `/ditto-audit`.
-- `/ditto-spec-component <component>`: analyze a component, create or update
+  rules.
+- `/ditto-spec-component <component>`: (for repos using Ditto specs) analyze a component, create or update
   its Ditto spec file (and specs for child components that lack one), and sync
   styleguide rules from the platform.
-- `/ditto-spec-gaps [component]`: find copy patterns across component
+- `/ditto-spec-gaps [component]`: (for repos using Ditto specs) find copy patterns across component
   instances that should be styleguide rules but aren't; create approved ones
   on the platform.
 
@@ -50,8 +50,7 @@ codex plugin add ditto@ditto
 Run `codex`, open `/hooks`, and trust the session hooks. The plugin reuses
 `skills/` and the session instructions from `hooks/hooks.json`.
 
-Register the Ditto MCP in `~/.codex/config.toml` (a stdio bridge carries the
-token header):
+Register the Ditto MCP in `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.ditto]
@@ -133,15 +132,9 @@ are `*.ditto.md` files that co-locate copy rules with your components. Run
 `/ditto-spec-setup` where commands are supported, or ask the agent to run the
 ditto-spec-setup skill. The setup asks before doing anything, installs the
 specs CLI only if missing, creates `dittospec.config.json` and
-`workspace.ditto.md`, scaffolds component spec files, and detects an existing
-setup to update instead of duplicating.
+`workspace.ditto.md`, and scaffolds component spec files.
 
-With specs in place:
-
-- `/ditto-review` and `/ditto-audit` treat spec files as the source of truth
-  for the surfaces they cover.
-- `/ditto-spec-audit`, `/ditto-spec-component`, and `/ditto-spec-gaps` become
-  usable.
+With specs in place `/ditto-spec-audit`, `/ditto-spec-component`, and `/ditto-spec-gaps` become usable.
 
 ### Keeping instruction copies aligned
 
