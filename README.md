@@ -1,4 +1,4 @@
-# Ditto Agent Package
+# Ditto Agent Setup Package
 
 Ditto's bundled agent integration:
 
