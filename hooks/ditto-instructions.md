@@ -33,6 +33,9 @@ Skills:
   platform.
 - `/ditto-spec-gaps [component]` — find copy patterns that should be
   styleguide rules but aren't; create approved ones on the platform.
+- `/ditto-spec-setup` — optional one-time setup for Ditto Specs (specs CLI,
+  `dittospec.config.json`, `workspace.ditto.md`, component spec files). Offer
+  it when the user wants spec files and the repo has none.
 
 If the Ditto MCP tools are unavailable (e.g. `DITTO_API_TOKEN` not set), say
 so once, suggest `export DITTO_API_TOKEN=<token>` (token from

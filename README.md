@@ -39,6 +39,27 @@ export DITTO_API_TOKEN=<your-api-token>
 
 Restart Claude Code (or run `/mcp`) and approve the `ditto` MCP server.
 
+### Optional: set up Ditto Specs
+
+[Ditto Specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview)
+are `*.ditto.md` files that co-locate copy rules with your components. To set
+them up, run:
+
+```
+/ditto-spec-setup
+```
+
+The setup asks before doing anything, installs the specs CLI only if missing,
+creates `dittospec.config.json` and `workspace.ditto.md`, scaffolds component
+spec files, and detects an existing setup to update instead of duplicating.
+
+With specs in place:
+
+- `/ditto-review` and `/ditto-audit` treat spec files as the source of truth
+  for the surfaces they cover.
+- `/ditto-spec-audit`, `/ditto-spec-component`, and `/ditto-spec-gaps` become
+  usable.
+
 ## Try it on the example
 
 The [`example/`](example) directory contains sample components seeded with
