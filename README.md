@@ -8,12 +8,17 @@ Ditto's bundled agent integration:
 - `/ditto-review`: check the current diff's user-facing strings against your
   styleguide rules and existing Ditto text; returns a fix-list.
 - `/ditto-audit [path]`: check the path for user-facing strings against your
-  styleguide rules and existing Ditto text; returns a fix-list
-  codebase.
+  styleguide rules and existing Ditto text; returns a fix-list.
 - `/ditto-spec-audit [component]`: for repos using [Ditto
   specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview) —
   audit every instance of a specced component across the codebase against its
   spec's rules. Component-scoped, unlike the file-scoped `/ditto-audit`.
+- `/ditto-spec-component <component>`: analyze a component, create or update
+  its Ditto spec file (and specs for child components that lack one), and sync
+  styleguide rules from the platform.
+- `/ditto-spec-gaps [component]`: find copy patterns across component
+  instances that should be styleguide rules but aren't; create approved ones
+  on the platform.
 
 ## Install
 

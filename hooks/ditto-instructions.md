@@ -28,6 +28,11 @@ Skills:
 - `/ditto-spec-audit [component]` — if the repo has `*.ditto.md` spec files:
   component-scoped audit of every instance of a specced component, wherever
   it's rendered, against the spec's rules.
+- `/ditto-spec-component <component>` — create or update a component's
+  `*.ditto.md` spec (surfaces, tags) and sync styleguide rules from the
+  platform.
+- `/ditto-spec-gaps [component]` — find copy patterns that should be
+  styleguide rules but aren't; create approved ones on the platform.
 
 If the Ditto MCP tools are unavailable (e.g. `DITTO_API_TOKEN` not set), say
 so once, suggest `export DITTO_API_TOKEN=<token>` (token from
