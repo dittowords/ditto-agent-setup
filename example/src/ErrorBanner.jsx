@@ -1,3 +1,5 @@
+import { Button } from "../design-system/src/atoms/Button";
+
 const MESSAGES = {
   network: "Whoops!! Something went wrong, please try again later!!!",
   auth: "ERROR: invalid credentials.",
@@ -5,11 +7,12 @@ const MESSAGES = {
   expiredAlt: "Session timed out, please log in again",
 };
 
-export function ErrorBanner({ kind }) {
+export function ErrorBanner({ kind, onRetry }) {
   return (
     <div role="alert" className="error-banner">
       {MESSAGES[kind] ?? "An unexpected error has occurred in the system."}
-      <button>Dismiss</button>
+      <Button variant="secondary" onClick={onRetry}>Try Again</Button>
+      <Button variant="ghost">Dismiss</Button>
     </div>
   );
 }

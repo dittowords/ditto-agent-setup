@@ -10,6 +10,10 @@ Ditto's bundled agent integration:
 - `/ditto-audit [path]`: check the path for user-facing strings against your
   styleguide rules and existing Ditto text; returns a fix-list
   codebase.
+- `/ditto-spec-audit [component]`: for repos using [Ditto
+  specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview) —
+  audit every instance of a specced component across the codebase against its
+  spec's rules. Component-scoped, unlike the file-scoped `/ditto-audit`.
 
 ## Install
 

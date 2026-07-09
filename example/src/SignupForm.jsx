@@ -1,3 +1,5 @@
+import { Button } from "../design-system/src/atoms/Button";
+
 export function SignupForm({ onSubmit }) {
   return (
     <form onSubmit={onSubmit}>
@@ -6,7 +8,7 @@ export function SignupForm({ onSubmit }) {
       <input id="email" type="email" placeholder="Enter Your E-mail Here..." />
       <label htmlFor="password">Password</label>
       <input id="password" type="password" placeholder="password" />
-      <button type="submit">SIGN UP NOW</button>
+      <Button type="submit">SIGN UP NOW</Button>
       <p>
         Already have an account? <a href="/login">Log In</a>
       </p>

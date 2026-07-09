@@ -25,6 +25,9 @@ Skills:
 - `/ditto-review` — check the current diff's user-facing strings against
   styleguide rules and text reuse; returns a fix-list.
 - `/ditto-audit [path]` — same check across a directory or the whole repo.
+- `/ditto-spec-audit [component]` — if the repo has `*.ditto.md` spec files:
+  component-scoped audit of every instance of a specced component, wherever
+  it's rendered, against the spec's rules.
 
 If the Ditto MCP tools are unavailable (e.g. `DITTO_API_TOKEN` not set), say
 so once, suggest `export DITTO_API_TOKEN=<token>` (token from
