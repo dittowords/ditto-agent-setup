@@ -1,0 +1,5 @@
+---
+description: Check the current diff's user-facing strings against Ditto styleguide rules and text reuse
+---
+
+Use the bundled ditto-review skill: collect the current diff, extract the user-facing strings, check them against the Ditto styleguide rules (get_styleguide_rules) and existing Ditto text (search_ditto_text), and report a fix-list, one line per finding. Do not edit files unless asked. $ARGUMENTS

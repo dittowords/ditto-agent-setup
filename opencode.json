@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["./.opencode/plugins/ditto.mjs"],
+  "mcp": {
+    "ditto": {
+      "type": "remote",
+      "url": "https://api.dittowords.com/v2/mcp",
+      "headers": {
+        "Authorization": "token {env:DITTO_API_TOKEN}"
+      }
+    }
+  }
+}
