@@ -1,0 +1,5 @@
+---
+description: Audit a directory or the whole repo's user-facing strings against Ditto styleguide rules and text reuse
+---
+
+Use the bundled ditto-audit skill: audit user-facing strings in $ARGUMENTS (default: repo root) against the Ditto styleguide rules (get_styleguide_rules) and existing Ditto text (search_ditto_text), and report a fix-list grouped by file. Do not edit files unless asked.

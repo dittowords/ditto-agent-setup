@@ -1,0 +1,14 @@
+{
+  "name": "ditto",
+  "version": "0.2.0",
+  "description": "Ditto's agent integration.",
+  "contextFileName": "AGENTS.md",
+  "mcpServers": {
+    "ditto": {
+      "httpUrl": "https://api.dittowords.com/v2/mcp",
+      "headers": {
+        "Authorization": "token $DITTO_API_TOKEN"
+      }
+    }
+  }
+}
