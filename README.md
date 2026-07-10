@@ -26,10 +26,21 @@ for the full explanation of each.
 
 ## Install
 
-Every host reuses the same `skills/` and instruction text; each adapter points
-its host at them. Set `DITTO_API_TOKEN` (from [your Ditto account
-settings](https://app.dittowords.com/account/user)) in the environment your
-agent runs in, then register the Ditto MCP in the host's config as shown below.
+Grab your API token from [your Ditto account
+settings](https://app.dittowords.com/account/user).
+
+Set it once in the shell your agent runs in — Claude Code, Codex, OpenCode, and
+Gemini CLI all read the token from this environment variable:
+
+```bash
+export DITTO_API_TOKEN=<your-api-token>
+```
+
+Add that line to your shell profile (`~/.zshrc`, `~/.bashrc`) so it persists
+across sessions. GitHub Copilot CLI is the exception — it can't read env vars
+in its MCP config, so paste the token directly there (shown below).
+
+Then register the Ditto MCP for your host.
 
 ### Claude Code
 
@@ -67,7 +78,8 @@ copilot plugin install ditto@ditto
 
 Commands are namespaced by plugin name, e.g. `/ditto:ditto-review`.
 
-Register the Ditto MCP in `~/.copilot/mcp-config.json`:
+Register the Ditto MCP in `~/.copilot/mcp-config.json`. Copilot can't expand
+env vars here, so paste your token in place of `<your-api-token>`:
 
 ```json
 {
