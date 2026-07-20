@@ -42,7 +42,7 @@ export DITTO_API_TOKEN=<your-api-token>
 /plugin install ditto@ditto
 ```
 
-Restart Claude Code and approve the `ditto` MCP server (if not approved already).
+Restart Claude Code and approve the ditto MCP server (if not approved already).
 
 ### Optional: set up Ditto Specs
 
