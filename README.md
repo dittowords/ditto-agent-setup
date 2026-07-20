@@ -29,8 +29,7 @@ for the full explanation of each.
 Grab your API token from [your Ditto account
 settings](https://app.dittowords.com/account/user).
 
-Set it once in the shell your agent runs in — Claude Code, Codex, OpenCode, and
-Gemini CLI all read the token from this environment variable:
+Set it once in the shell your agent runs in.
 
 ```bash
 export DITTO_API_TOKEN=<your-api-token>
@@ -44,80 +43,6 @@ export DITTO_API_TOKEN=<your-api-token>
 ```
 
 Restart Claude Code and approve the `ditto` MCP server (if not approved already).
-
-### Codex
-
-```bash
-codex plugin marketplace add dittowords/ditto-agent-setup
-codex plugin add ditto@ditto
-```
-
-Run `codex`, open `/hooks`, and trust the session hooks. The plugin reuses
-`skills/` and the session instructions from `hooks/hooks.json`.
-
-Register the Ditto MCP in `~/.codex/config.toml`:
-
-```toml
-[mcp_servers.ditto]
-command = "npx"
-args = ["-y", "mcp-remote", "https://api.dittowords.com/v2/mcp", "--header", "Authorization: token ${DITTO_API_TOKEN}"]
-```
-
-### GitHub Copilot CLI
-
-```bash
-copilot plugin marketplace add dittowords/ditto-agent-setup
-copilot plugin install ditto@ditto
-```
-
-Commands are namespaced by plugin name, e.g. `/ditto:ditto-review`.
-
-Register the Ditto MCP in `~/.copilot/mcp-config.json`. Copilot can't expand
-env vars here, so paste your token in place of `<your-api-token>`:
-
-```json
-{
-  "mcpServers": {
-    "ditto": {
-      "type": "http",
-      "url": "https://api.dittowords.com/v2/mcp",
-      "headers": {
-        "Authorization": "token <your-api-token>"
-      }
-    }
-  }
-}
-```
-
-### OpenCode
-
-Add to your `opencode.json`, pointing at a checkout of this repo:
-
-```json
-{
-  "plugin": ["<path-to-checkout>/.opencode/plugins/ditto.mjs"],
-  "mcp": {
-    "ditto": {
-      "type": "remote",
-      "url": "https://api.dittowords.com/v2/mcp",
-      "headers": {
-        "Authorization": "token {env:DITTO_API_TOKEN}"
-      }
-    }
-  }
-}
-```
-### Gemini CLI
-
-```bash
-gemini extensions install https://github.com/dittowords/ditto-agent-setup
-```
-
-If the MCP server fails to authenticate, add it manually:
-
-```bash
-gemini mcp add --transport http ditto https://api.dittowords.com/v2/mcp --header "Authorization: token <your-api-token>"
-```
 
 ### Optional: set up Ditto Specs
 
