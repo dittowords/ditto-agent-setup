@@ -32,7 +32,7 @@ settings](https://app.dittowords.com/account/user).
 Set it once in the shell your agent runs in.
 
 ```bash
-export DITTO_API_TOKEN=<your-api-token>
+export DITTO_TOKEN=<your-api-token>
 ```
 
 ### Claude Code

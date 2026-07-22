@@ -37,7 +37,7 @@ Skills:
   `dittospec.config.json`, `workspace.ditto.md`, component spec files). Offer
   it when the user wants spec files and the repo has none.
 
-If the Ditto MCP tools are unavailable (e.g. `DITTO_API_TOKEN` not set), say
-so once, suggest `export DITTO_API_TOKEN=<token>` (token from
+If the Ditto MCP tools are unavailable (e.g. `DITTO_TOKEN` not set), say
+so once, suggest `export DITTO_TOKEN=<token>` (token from
 https://app.dittowords.com/account/user), and continue without them. Do not
 repeat the warning every turn.

@@ -18,12 +18,9 @@ Set up Ditto Specs in this repo. Once installed, `/ditto-spec-audit`,
    installed (locally or globally), install it only then:
    `npm install --save-dev @dittowords/spec-cli`.
 
-3. **Verify tokens.** Check that `DITTO_API_TOKEN` is set; if not, point the
+3. **Verify tokens.** Check that `DITTO_TOKEN` is set; if not, point the
    user to https://app.dittowords.com/account/user and pause until it is set.
-   The specs CLI reads `DITTO_API_KEY`, not `DITTO_API_TOKEN`. If only
-   `DITTO_API_TOKEN` is set, run CLI commands with
-   `DITTO_API_KEY="$DITTO_API_TOKEN"` prefixed rather than writing the token
-   to a file.
+   The specs CLI reads `DITTO_TOKEN` directly.
 
 4. **Run init** (fresh installs only): `npx ditto-spec init`. This creates
    `dittospec.config.json` and `workspace.ditto.md` in the current directory,
