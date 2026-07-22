@@ -1,7 +1,7 @@
 {
   "name": "ditto",
   "displayName": "Ditto",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Ditto's agent integration.",
   "author": {
     "name": "Ditto",
