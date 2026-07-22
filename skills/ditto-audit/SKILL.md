@@ -50,5 +50,5 @@ diff.
 
 For large codebases, audit the highest-traffic surfaces first and say what
 was skipped rather than silently truncating. Do not edit files unless asked.
-If the Ditto MCP tools are unavailable, report that (`DITTO_API_TOKEN`
+If the Ditto MCP tools are unavailable, report that (`DITTO_TOKEN`
 missing?) instead of guessing at rules.

@@ -33,7 +33,7 @@ Set it once in the shell your agent runs in — Claude Code, Codex, OpenCode, an
 Gemini CLI all read the token from this environment variable:
 
 ```bash
-export DITTO_API_TOKEN=<your-api-token>
+export DITTO_TOKEN=<your-api-token>
 ```
 
 Add that line to your shell profile (`~/.zshrc`, `~/.bashrc`) so it persists
@@ -66,7 +66,7 @@ Register the Ditto MCP in `~/.codex/config.toml`:
 ```toml
 [mcp_servers.ditto]
 command = "npx"
-args = ["-y", "mcp-remote", "https://api.dittowords.com/v2/mcp", "--header", "Authorization: token ${DITTO_API_TOKEN}"]
+args = ["-y", "mcp-remote", "https://api.dittowords.com/v2/mcp", "--header", "Authorization: token ${DITTO_TOKEN}"]
 ```
 
 ### GitHub Copilot CLI
@@ -112,7 +112,7 @@ Add to your `opencode.json`, pointing at a checkout of this repo:
       "type": "remote",
       "url": "https://api.dittowords.com/v2/mcp",
       "headers": {
-        "Authorization": "token {env:DITTO_API_TOKEN}"
+        "Authorization": "token {env:DITTO_TOKEN}"
       }
     }
   }
@@ -130,7 +130,7 @@ gemini extensions install https://github.com/dittowords/ditto-agent-setup
 
 The extension loads `AGENTS.md` as always-on context, registers the
 `/ditto-*` commands and skills, and configures the Ditto MCP server (reads
-`DITTO_API_TOKEN` from your environment). If the MCP server fails to
+`DITTO_TOKEN` from your environment). If the MCP server fails to
 authenticate, add it manually:
 
 ```bash
