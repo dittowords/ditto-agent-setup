@@ -45,5 +45,5 @@ fix-list, not an essay.
    passes, that one line is the whole report.
 
 Do not edit files unless the user asks you to apply the fixes. If the Ditto
-MCP tools are unavailable, report that (`DITTO_TOKEN` missing?) instead
-of guessing at rules.
+MCP tools are unavailable, report that (not logged in? try `/mcp` →
+`ditto` → Authenticate) instead of guessing at rules.

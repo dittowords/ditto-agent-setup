@@ -26,15 +26,6 @@ for the full explanation of each.
 
 ## Install
 
-Grab your API token from [your Ditto account
-settings](https://app.dittowords.com/account/user).
-
-Set it once in the shell your agent runs in.
-
-```bash
-export DITTO_TOKEN=<your-api-token>
-```
-
 ### Claude Code
 
 ```
@@ -44,19 +35,36 @@ export DITTO_TOKEN=<your-api-token>
 
 Restart Claude Code and approve the ditto MCP server (if not approved already).
 
+Then log in: run `/mcp`, select **ditto**, and choose **Authenticate**. A
+browser tab opens for you to log in to Ditto and approve access. There's no
+token to create — the MCP server uses OAuth.
+
+Need a static credential instead — for continuous integration, a headless
+agent, or machine-to-machine access? See [Authenticating with an API
+token](https://developer.dittowords.com/mcp-reference/installation#authenticating-with-an-api-token)
+in the installation guide, and configure the server yourself rather than
+through this package.
+
 ### Optional: set up Ditto Specs
 
-[Ditto Specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview)
-are `*.ditto.md` files that co-locate copy rules with your components. Run
-`/ditto-spec-setup` and the agent will install the
-specs CLI if missing, creates `dittospec.config.json` and
+The specs CLI reads a Ditto API token directly, so this part does need one. If you don't have a key handy, create a new one in Developers > API Keys.
+
+Add your API key as a value accessible from the terminal like so:
+
+```bash
+export DITTO_TOKEN=<your-api-token>
+```
+
+[Ditto Specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview) are `*.ditto.md` files that co-locate copy rules with your components. Run  
+`/ditto-spec-setup` and the agent will install the  
+specs CLI if missing, creates `dittospec.config.json` and  
 `workspace.ditto.md`, and scaffolds component spec files.
 
 With specs in place `/ditto-spec-audit`, `/ditto-spec-component`, and `/ditto-spec-gaps` become usable.
 
 ## Try it on the example
 
-The [`example/`](example) directory contains sample components seeded with
+The `[example/](example)` directory contains sample components seeded with
 copy problems (inconsistent casing, "Log in" vs "sign in", shouty errors).
 From this repo:
 
@@ -66,4 +74,3 @@ And `/ditto-review` does the same for just your working diff, useful right
 before a commit:
 
 ![ditto-review running on a working diff](assets/ditto-review.png)
-
