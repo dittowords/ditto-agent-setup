@@ -20,7 +20,8 @@ Set up Ditto Specs in this repo. Once installed, `/ditto-spec-audit`,
 
 3. **Verify tokens.** Check that `DITTO_TOKEN` is set; if not, point the
    user to https://app.dittowords.com/account/user and pause until it is set.
-   The specs CLI reads `DITTO_TOKEN` directly.
+   The specs CLI reads `DITTO_TOKEN` directly — it has no OAuth flow, so a
+   token is required here even though the MCP server itself doesn't need one.
 
 4. **Run init** (fresh installs only): `npx ditto-spec init`. This creates
    `dittospec.config.json` and `workspace.ditto.md` in the current directory,
