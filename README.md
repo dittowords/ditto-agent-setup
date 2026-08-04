@@ -59,9 +59,7 @@ export DITTO_TOKEN=<your-api-token>
 ```
 
 [Ditto Specs](https://developer.dittowords.com/ditto-specs-cli-reference/overview) are `*.ditto.md` files that co-locate copy rules with your components. Run  
-`/ditto-spec-setup` and the agent will install the  
-specs CLI if missing, creates `dittospec.config.json` and  
-`workspace.ditto.md`, and scaffolds component spec files.
+`/ditto-spec-setup` and the agent will install the specs CLI if missing, creates `dittospec.config.json` and `workspace.ditto.md`, and scaffolds component spec files.
 
 With specs in place `/ditto-spec-audit`, `/ditto-spec-component`, and `/ditto-spec-gaps` become usable.
 
