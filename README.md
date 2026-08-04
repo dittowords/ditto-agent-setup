@@ -25,7 +25,7 @@ for the full explanation of each.
 
 ## Install
 
-### Claude Code
+### Claude Code CLI
 
 ```
 /plugin marketplace add dittowords/ditto-agent-setup
@@ -37,11 +37,12 @@ Restart Claude Code and approve the ditto MCP server (if not approved already).
 Then log in: run `/mcp`, select **plugin:ditto:ditto**, and choose **Authenticate**. A
 browser tab opens for you to log in to Ditto and approve access.
 
-Need a static credential instead — for continuous integration, a headless
-agent, or machine-to-machine access? See [Authenticating with an API
-token](https://developer.dittowords.com/mcp-reference/installation#authenticating-with-an-api-token)
-in the installation guide, and configure the server yourself rather than
-through this package.
+### Cursor
+
+In Cursor Settings go to **Plugins** and paste `https://github.com/dittowords/ditto-agent-setup` in the "Search or Paste Link" input.
+Click on **Ditto** -> **Add to Cursor**.
+
+Next go to **Tools & MCPs** and authenticate with the ditto Plugin MCP Server.
 
 ### Optional: set up Ditto Specs
 
