@@ -3,8 +3,7 @@
 Ditto's bundled agent integration:
 
 - [Ditto MCP server](https://developer.dittowords.com/mcp-reference/overview)
-- Session hooks: every session starts with instructions to consult Ditto for user-facing copy,
-  without you prompting it.
+- Always on instructions to consult Ditto for user-facing copy, without you prompting it.
 - `/ditto-review`: check the current diff's user-facing strings against your
   styleguide rules and existing Ditto text; returns a fix-list.
 - `/ditto-audit [path]`: check the path for user-facing strings against your
