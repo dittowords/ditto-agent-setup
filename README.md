@@ -42,7 +42,11 @@ browser tab opens for you to log in to Ditto and approve access.
 In Cursor Settings go to **Plugins** and paste `https://github.com/dittowords/ditto-agent-setup` in the "Search or Paste Link" input.
 Click on **Ditto** -> **Add to Cursor**.
 
+![Cursor step 1](assets/cursor-step-1.png)
+
 Next go to **Tools & MCPs** and authenticate with the ditto Plugin MCP Server.
+
+![Cursor step 2](assets/cursor-step-2.png)
 
 ### Optional: set up Ditto Specs
 
