@@ -47,13 +47,10 @@ through this package.
 
 ### Cursor
 
-In Cursor's Dashboard, go to **Plugins**, then under Team Marketplaces choose
-**Add Marketplace** → **Import from Repo** and paste
-`https://github.com/dittowords/ditto-agent-setup`. Install the **ditto**
+In Cursor go to **Customize**, then **Browse Marketplace**. 
+**All** → **Add Marketplace** → **Import from GitHub** and paste
+`https://github.com/dittowords/ditto-agent-setup` → **Import**. Install the **ditto**
 plugin from that marketplace.
-
-To try it without a marketplace, clone this repo into
-`~/.cursor/plugins/local/ditto` and restart Cursor.
 
 Then log in: open **Settings → MCP & Integrations**, find the **ditto** server,
 and authenticate. A browser tab opens for you to log in to Ditto and approve
