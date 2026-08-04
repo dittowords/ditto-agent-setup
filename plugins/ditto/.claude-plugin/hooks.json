@@ -6,8 +6,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/ditto-instructions.md\"",
-            "commandWindows": "Get-Content \"$env:CLAUDE_PLUGIN_ROOT\\hooks\\ditto-instructions.md\"",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/.claude-plugin/ditto-instructions.md\"",
+            "commandWindows": "Get-Content \"$env:CLAUDE_PLUGIN_ROOT\\.claude-plugin\\ditto-instructions.md\"",
             "timeout": 5,
             "statusMessage": "Loading Ditto instructions..."
           }
@@ -19,8 +19,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/ditto-instructions.md\"",
-            "commandWindows": "Get-Content \"$env:CLAUDE_PLUGIN_ROOT\\hooks\\ditto-instructions.md\"",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/.claude-plugin/ditto-instructions.md\"",
+            "commandWindows": "Get-Content \"$env:CLAUDE_PLUGIN_ROOT\\.claude-plugin\\ditto-instructions.md\"",
             "timeout": 5,
             "statusMessage": "Loading Ditto instructions..."
           }

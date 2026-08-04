@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Ditto's agent integration: MCP server, always-on copy instructions, and copy review skills.",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "pluginRoot": "plugins"
   },
   "plugins": [

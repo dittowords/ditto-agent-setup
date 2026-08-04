@@ -1,7 +1,7 @@
 {
   "name": "ditto",
   "displayName": "Ditto",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Ditto's agent integration.",
   "author": {
     "name": "Ditto",
@@ -11,5 +11,6 @@
   "repository": "https://github.com/dittowords/ditto-agent-setup",
   "license": "MIT",
   "keywords": ["ditto", "copy", "content", "styleguide"],
-  "mcpServers": "./mcp.json"
+  "mcpServers": "./mcp.json",
+  "hooks": "./.claude-plugin/hooks.json"
 }
