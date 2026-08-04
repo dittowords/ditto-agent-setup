@@ -34,9 +34,8 @@ for the full explanation of each.
 
 Restart Claude Code and approve the ditto MCP server (if not approved already).
 
-Then log in: run `/mcp`, select **ditto**, and choose **Authenticate**. A
-browser tab opens for you to log in to Ditto and approve access. There's no
-token to create — the MCP server uses OAuth.
+Then log in: run `/mcp`, select **plugin:ditto:ditto**, and choose **Authenticate**. A
+browser tab opens for you to log in to Ditto and approve access.
 
 Need a static credential instead — for continuous integration, a headless
 agent, or machine-to-machine access? See [Authenticating with an API
