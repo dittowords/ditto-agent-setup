@@ -45,6 +45,24 @@ token](https://developer.dittowords.com/mcp-reference/installation#authenticatin
 in the installation guide, and configure the server yourself rather than
 through this package.
 
+### Cursor
+
+In Cursor's Dashboard, go to **Plugins**, then under Team Marketplaces choose
+**Add Marketplace** → **Import from Repo** and paste
+`https://github.com/dittowords/ditto-agent-setup`. Install the **ditto**
+plugin from that marketplace.
+
+To try it without a marketplace, clone this repo into
+`~/.cursor/plugins/local/ditto` and restart Cursor.
+
+Then log in: open **Settings → MCP & Integrations**, find the **ditto** server,
+and authenticate. A browser tab opens for you to log in to Ditto and approve
+access — same OAuth flow, no token to create.
+
+The plugin ships the same skills and always-on copy instructions as the Claude
+Code plugin; in Cursor the instructions load as an always-applied rule, and the
+skills are model-invoked or typed as `/ditto-review`, `/ditto-audit`, and so on.
+
 ### Optional: set up Ditto Specs
 
 The specs CLI reads a Ditto API token directly, so this part does need one. If you don't have a key handy, create a new one in Developers > API Keys.
