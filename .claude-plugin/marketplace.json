@@ -10,7 +10,7 @@
     {
       "name": "ditto",
       "description": "Bundled Ditto MCP + session instructions + skills.",
-      "source": "./",
+      "source": "./plugins/ditto",
       "category": "productivity"
     }
   ]
