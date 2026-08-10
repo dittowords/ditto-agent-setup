@@ -37,6 +37,28 @@ Restart Claude Code and approve the ditto MCP server (if not approved already).
 Then log in: run `/mcp`, select **plugin:ditto:ditto**, and choose **Authenticate**. A
 browser tab opens for you to log in to Ditto and approve access.
 
+### Claude Code (Desktop)
+
+With the code tab selected, click Customize:
+
+![assets/claude-step-1.png]
+
+Find the Plugin tab -> Add -> Add marketplace:
+
+![assets/claude-step-2.png]
+
+Paste `https://github.com/dittowords/ditto-agent-setup`:
+
+![assets/claude-step-3.png]
+
+Install Ditto:
+
+![assets/claude-step-4.png]
+
+Finally, go to Connectors -> Ditto -> Connect/Reconnect to complete authorization:
+
+![assets/claude-step-5.png]
+
 ### Cursor
 
 In Cursor Settings go to **Plugins** and paste `https://github.com/dittowords/ditto-agent-setup` in the "Search or Paste Link" input.
