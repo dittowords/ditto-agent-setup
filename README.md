@@ -37,9 +37,9 @@ Restart Claude Code and approve the ditto MCP server (if not approved already).
 Then log in: run `/mcp`, select **plugin:ditto:ditto**, and choose **Authenticate**. A
 browser tab opens for you to log in to Ditto and approve access.
 
-### Claude Code (Desktop)
+### Claude Desktop
 
-With the code tab selected, click Customize:
+Click Customize:
 
 ![assets/claude-step-1.png](assets/claude-step-1.png)
 
