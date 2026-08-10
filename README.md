@@ -41,23 +41,23 @@ browser tab opens for you to log in to Ditto and approve access.
 
 With the code tab selected, click Customize:
 
-![assets/claude-step-1.png]
+![assets/claude-step-1.png](assets/claude-step-1.png)
 
 Find the Plugin tab -> Add -> Add marketplace:
 
-![assets/claude-step-2.png]
+![assets/claude-step-2.png](assets/claude-step-2.png)
 
 Paste `https://github.com/dittowords/ditto-agent-setup`:
 
-![assets/claude-step-3.png]
+![assets/claude-step-3.png](assets/claude-step-3.png)
 
 Install Ditto:
 
-![assets/claude-step-4.png]
+![assets/claude-step-4.png](assets/claude-step-4.png)
 
 Finally, go to Connectors -> Ditto -> Connect/Reconnect to complete authorization:
 
-![assets/claude-step-5.png]
+![assets/claude-step-5.png](assets/claude-step-5.png)
 
 ### Cursor
 
