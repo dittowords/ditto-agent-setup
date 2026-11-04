@@ -26,6 +26,27 @@ Context that changes behavior:
   results are scoped to those projects — trust that scoping.
 - If the repo contains Ditto spec files (`*.ditto.md`), treat them as the
   source of truth for that surface's copy and keep them in sync.
+- If `list_bases` shows a base connected to this repo, search that base and
+  the library for existing text. Use 2 queries in 1 `search_ditto_text` call:
+  one with `bases: [{ id: <base id> }]` (plus any `projectIds` from the
+  config), and one with `entityTypes: ["libraryComponent"]`.
+
+When you open a PR, or push to an open PR, and the branch adds or changes
+user-facing text, track it in Ditto without being asked. If the PR description
+already links a Ditto project, you are done. Otherwise:
+
+1. Push the branch. Ditto reads it from GitHub.
+2. Find the base connected to this repo with `list_bases`. If that tool isn't
+   available, skip these steps. If no base matches, tell the user in one line,
+   and skip these steps.
+3. Call `create_ditto_project` with a name based on the PR, `baseId`, and
+   `githubBranch`. If you haven't opened the PR yet, do this first.
+4. If Ditto says the branch is already paired, don't create another project.
+   Find the existing one with `list_projects`.
+5. Put the project's URL in the PR description: `Ditto project: <url>`.
+
+Don't create a project before the branch has new or changed user-facing text.
+If a Ditto call fails, tell the user once, and open the PR anyway.
 
 Skills:
 
