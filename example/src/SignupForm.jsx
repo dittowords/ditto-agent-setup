@@ -8,7 +8,7 @@ export function SignupForm({ onSubmit }) {
       <input id="email" type="email" placeholder="Enter Your E-mail Here..." />
       <label htmlFor="password">Password</label>
       <input id="password" type="password" placeholder="password" />
-      <Button type="submit">SIGN UP NOW</Button>
+      <Button type="submit">Sign up now</Button>
       <p>
         Already have an account? <a href="/login">Log In</a>
       </p>
